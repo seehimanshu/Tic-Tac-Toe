@@ -4,6 +4,7 @@ let newbtn=document.querySelector("#new-btn");
 let msgContainer=document.querySelector(".msg-container");
 let msg=document.querySelector("#winner");
 let resetbtn=document.querySelector("#reset-btn");
+let div=document.querySelector("body");
 let winnerArr=[[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
 let playerTurnO=true;
 
@@ -43,13 +44,13 @@ const showWinner=(winwin)=>{
 
 const checkWinner=()=>{
     for(let pattern of winnerArr){
-        let pattern1=boxes[pattern[0]].innerText;
-        let pattern2=boxes[pattern[1]].innerText;
-        let pattern3= boxes[pattern[2]].innerText;
+        let pos1=boxes[pattern[0]].innerText;
+        let pos2=boxes[pattern[1]].innerText;
+        let pos3= boxes[pattern[2]].innerText;
 
-        if(pattern1!="" && pattern2!="" && pattern3!=""){
-            if(pattern1===pattern2 && pattern2===pattern3){
-                showWinner(pattern1);
+        if(pos1!="" && pos2!="" && pos3!=""){
+            if(pos1===pos2 && pos2===pos3){
+                showWinner(pos3);
             }
         }
     }
